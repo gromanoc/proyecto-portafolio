@@ -121,3 +121,32 @@ html {
     font-family: var(--font-family);
   }
   
+
+  /* Base */
+
+h1, h2, h3 {
+  font-family: var(--font-family);
+}
+
+h1 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 42px;
+}
+
+  /* Header */
+  .header-home {
+    font-size: 40px;
+}
+  /* Nav */
+
+  
+  /* Main */
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+}
