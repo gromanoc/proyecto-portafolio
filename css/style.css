@@ -131,5 +131,42 @@ h1 {
     bottom: 0;
     }
 
+    /* Grid proyectos */
 
-
+    .grid {
+      max-height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      grid-template-areas: 
+          ". nav"
+          "titulo grid-proyectos"
+          "titulo grid-proyectos"
+          "titulo grid-proyectos"
+          "footer ."
+  }
+  
+  .nav {
+     grid-area: nav; 
+  }
+  
+  .titulo-proyectos {
+      grid-area: titulo;  
+  }
+  
+  .grid-proyectos {
+      grid-area: grid-proyectos;  
+      align-content: center;
+  }
+  
+  .footer {
+      grid-area: footer;  
+  }
+  
+  
+  .grid-proyectos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 20px;
+  }
+  
