@@ -2,171 +2,193 @@
 *    Variables
 *****************************************/
 :root {
-  /* Colors */
-  --background: #ffffff;
-  --primary: #000000;
-  /* Typography */
-  --font-family: 'Roboto', sans-serif;
+  --white: #ffffff;
+  --black: #000000;
+  --link: #0000ee;
+  --hover: #551a8b;
+  --font-family: "Roboto", sans-serif;
 }
 
-/* Resets */
-html{box-sizing:border-box}*,::after,::before{box-sizing:inherit}blockquote,body,figure,h1,h2,h3,h4,h5,h6,hr,li,ol,pre,ul{margin:0;padding:0}ul{list-style:none}button,input,select,textarea{color:inherit;font:inherit;letter-spacing:inherit}button,input,textarea{border:1px solid gray}button{border-radius:0;padding:.75em 1em;background-color:transparent}button *{pointer-events:none}embed,iframe,img,object,video{display:block;max-width:100%}table{table-layout:fixed;width:100%}[hidden]{display:none}noscript{display:block;margin-bottom:1em;margin-top:1em}
-
 /****************************************
-*    Base - Elements
+*    Base
 *****************************************/
 html {
   height: 100%;
 }
 
 body {
-  color: var(--primary);
-  background: var(--background);
-  font-family: var(--font-family);
+  color: var(--black);
+  background: var(--white);
   font-size: 100%;
-  font-size: 18px;
+  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+  font-family: var(--font-family);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 a {
   text-decoration: none;
+  color: var(--black);
+  cursor: pointer;
 }
 
-/* Tipografía */
-p {
-  font-size: 1em;
+a:active,
+a:hover {
+  color: var(--hover);
+  text-decoration: underline;
 }
 
-h1 {
-  font-size: 2em;
-  line-height: 1.25;
-}
-
-h2 {
-  font-size: 1.6em;
-  line-height: 1.2;
-}
-
-h3 {
-  font-size: 1.4em;
-  line-height: 1.15;
-}
-
-h4 {
-  font-size: 1.2em;
-  line-height: 1;
-}
-
-/* Tipografía responsiva */
-/* https://css-tricks.com/snippets/css/fluid-typography */
-body {
-  font-size: calc(16px + (20 - 16) * ((100vw - 720px) / (1400 - 720)));
+ul {
+  padding-left: 0;
 }
 
 /****************************************
-*    Componentes
+*    Components - Common
 *****************************************/
+/* Layout */
+.home {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr max-content;
+  height: 100vh;
+}
+
+@media screen and (min-width: 40em) {
+  /* Desktop */
+  .home {
+    grid-template-columns: auto 1fr max-content;
+    grid-column-gap: 1em;
+  }
+}
+
+/* Intro */
+.intro {
+  max-width: 1.6em;
+  max-height: 100%;
+  margin: 0 auto;
+  padding: 1em 0 0.5em;
+  font-size: 10em;
+  font-weight: bold;
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+@media screen and (min-width: 40em) {
+  /* Desktop */
+  .intro {
+    align-self: center;
+    margin-left: 0.5em;
+    margin-bottom: 1.2em;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  /* Larger screens */
+  .intro {
+    align-self: center;
+    margin-top: 1em;
+    margin-bottom: 2em;
+    margin-left: 1.5em;
+    padding: 0;
+  }
+}
+
 /* Header */
-
-h1 {
-  font-size: 36px;
-  line-height: 42px;
+.header {
+  margin: 0 auto;
 }
 
-  /* Header */
-  .header-home {
-    display:flex;
-    font-size: 40px;
+.header__nombre {
+  font-size: 2em;
+  font-weight: bolder;
 }
 
-.hola{
-  font-size: 90px;
+.header p {
+  font-size: 1.3em;
+  line-height: 1.5;
 }
 
-.shelly{
-  display:flex;
-  flex-direction: column;
+@media screen and (min-width: 40em) {
+  /* Desktop */
+  .home .header {
+    align-self: center;
+    width: 100%;
+  }
 }
 
-  /* Nav */
+/* Nav */
 .nav {
-
+  padding: 2em;
 }
-  
-  /* Main */
 
-    /* Porfafolio */
+.menu {
+  display: flex;
+  justify-content: flex-end;
+}
 
-    .proyectos {
-      font-size: 20px;
-    }
+.menu li {
+  padding-right: 1em;
+}
 
-    .grid-proyectos {
-      display: grid;
-    }
-
-    /* Contacto */
-
-    .contacto {
-
-    }
-
-    /* Proyecto Diseño */
-    .proyecto{
-
-    }
-
-    .imagenes-proyectos{
-
-    }
-
-    /* Sobre Mi */
-
-    .sobremi{
-
-    }
-
-  /* Footer */
-    .footer {
-    position: absolute;
-    bottom: 0;
-    }
-
-    /* Grid proyectos */
-
-    .grid {
-      max-height: 100vh;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(5, 1fr);
-      grid-template-areas: 
-          ". nav"
-          "titulo grid-proyectos"
-          "titulo grid-proyectos"
-          "titulo grid-proyectos"
-          "footer ."
-  }
-  
+@media screen and (min-width: 40em) {
+  /* Desktop */
   .nav {
-     grid-area: nav; 
+    margin-top: 8em;
+    padding: 0;
   }
-  
-  .titulo-proyectos {
-      grid-area: titulo;  
+
+  .menu {
+    writing-mode: vertical-lr;
+    align-items: center;
+    width: 160px;
   }
-  
-  .grid-proyectos {
-      grid-area: grid-proyectos;  
-      align-content: center;
+
+  .menu li {
+    padding-right: 0;
+    padding-bottom: 2em;
   }
-  
-  .footer {
-      grid-area: footer;  
-  }
-  
-  
-  .grid-proyectos {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px;
-  }
-  
+}
+
+.proyectos {
+  display: flex;
+  justify-content: center;
+  margin-top: 25vh;
+}
+
+.proyectos-titulo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 33%;
+}
+
+.proyectos-titulo span {
+  font-size: 180px;
+  letter-spacing: 0;
+  line-height: 0.8;
+}
+
+.proyectos-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 40%;
+}
+
+img[alt="placeholder"] {
+  max-width: 250px;
+}
+
+/****************************************
+*    Helpers
+*****************************************/
+.centrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ayuda visual temporal */
+.outline {
+  border: 2px dotted blue;
+}
