@@ -42,6 +42,11 @@ ul {
   padding-left: 0;
 }
 
+h2 {
+  font-size: 34px;
+  font-weight: bold;
+}
+
 /****************************************
 *    Components - Common
 *****************************************/
@@ -178,6 +183,33 @@ ul {
 
 img[alt="placeholder"] {
   max-width: 250px;
+}
+
+/* Proyecto */
+.proyecto {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  height: 100%;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.proyecto header {
+  align-self: end;
+  height: 50%;
+  grid-column: 1 / 2;
+}
+
+.proyecto #proyecto-img {
+  align-self: center;
+  justify-self: center;
+  grid-column: 3 / 4;
+}
+
+.arrow-left {
+  grid-column: 2 / 3;
+  align-self: center;
+  height: 100%;
 }
 
 /****************************************
