@@ -160,18 +160,19 @@ ul {
 .proyectos-titulo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 33%;
+  width: 32%;
 }
 
 .proyectos-titulo span {
   font-size: 180px;
-  letter-spacing: 0;
+  letter-spacing: -0.2;
   line-height: 0.8;
 }
 
 .proyectos-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
   max-width: 40%;
 }
 
